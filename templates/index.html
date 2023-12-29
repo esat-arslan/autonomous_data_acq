@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Data Search</title>
+    <style>
+             body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Data Search</h1>
+    <form method="POST" action="/search_and_save">
+         <label for="api_key">TMDb API Key:</label>
+         <input type="text" name="api_key" id="api_key" placeholder="Enter your TMDb API Key" required><br>
+         
+         <label for="num_movies">Number of Movies:</label>
+         <input type="number" name="num_movies" id="num_movies" placeholder="Enter the number of movies" required><br>
+         
+         <label for="release_year">Release Year (e.g., 2022):</label>
+         <input type="text" name="release_year" id="release_year" placeholder="Enter the release year"><br>
+ 
+         <label for="file_name">File Name:</label>
+         <input type="text" name="file_name" id="file_name" placeholder="Enter a file name" required><br>
+         
+         <label for="append">
+             <input type="radio" name="file_mode" id="append" value="append" required> Append to existing file
+         </label>
+         <label for="write">
+             <input type="radio" name="file_mode" id="write" value="write" required> Write to a new file
+         </label><br>
+         
+         <label for="genre">Select a Genre:</label>
+         <select name="genre" id="genre">
+             <option value="">No Genre</option> 
+             <option value="28">Action</option>
+             <option value="12">Adventure</option>
+             <option value="16">Animation</option>
+             <option value="35">Comedy</option>
+             <option value="80">Crime</option>
+             <option value="18">Drama</option>
+             <option value="10751">Family</option>
+             <option value="14">Fantasy</option>
+             <option value="36">History</option>
+             <option value="27">Horror</option>
+             <option value="10402">Music</option>
+             <option value="9648">Mystery</option>
+             <option value="10749">Romance</option>
+             <option value="878">Science Fiction</option>
+             <option value="10770">Tv Movie</option>
+             <option value="53">Thriller</option>
+             <option value="10752">War</option>
+             <option value="37">Western</option>
+         </select>
+ 
+        <button type="submit">Search and Save</button>
+    </form>
+</body>
+</html>
